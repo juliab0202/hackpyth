@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+♥ Please register ♥
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container" style="padding: 0 300px;">
+        <form method="POST" class="form-register" action="/register" style="margin-top: 20px; background:rgb(230, 186, 255, 0.3); border: 5px outset rgb(230, 186, 255, 0.2); border-radius: 50px;">
+            <br>
+            <img class="mb-4" src="static/mond.png" alt="moon" style="width:150px;">
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Register
+            </h1>
+
+            <label for="Username" class="form-label">Username</label>
+            <input type="text" id="Username" name="Username" class="form-control" style="text-align: center">
+
+            <label for="Email" class="form-label">Email</label>
+            <input type="text" id="Email" name="Email" class="form-control" style="text-align: center">
+
+            <label for="Passwor1" class="form-label">Password</label>
+            <input type="password" id="Password1" name="Password1" class="form-control" style="text-align: center" aria-describedby="passwordHelpBlock">
+
+            <label for="Password2" class="form-label">Repeat your password</label>
+            <input type="password" id="Password2" name="Password2" class="form-control" style="text-align: center" aria-describedby="passwordHelpBlock">
+
+            <br>
+            <button type="submit" class="btn btn-dark btn-lg">Register</button>
+
+        </form>
+    </div>
+</body>
+{% endblock %}

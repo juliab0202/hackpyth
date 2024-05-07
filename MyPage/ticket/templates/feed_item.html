@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+♥ User's Posts ♥
+{% endblock %}
+
+{% block content %}
+        <style>
+            .header-container {
+            padding: 0 200px;
+            margin-top: 20px;
+            margin-bottom: 35px; /* Add margin bottom to space out from the "Latest Posts" text */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+
+        </style>
+<div class="container">
+<div class="header-container">
+    <h1 style="color:#36242c; margin: 0 auto">{{ item[0][0] }}'s Posts</h1>
+</div>
+    <div class="row">
+        {% for item in item %}
+        <div class="col-md-4">
+            <div class="card mb-4" style="background:rgb(218, 189, 255, 0.8); border: 5px outset rgb(116, 255, 236, 0.2)">
+                <div class="card-body">
+                    <p class="card-title">Feeling: {{item[3]}}</p>
+                    <p class="card-text">Song: {{ item.songname | safe}}</p>
+                    <p class="card-text">Color: {{ item.color }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+♥ Feed ♥
+{% endblock %}
+
+{% block content %}
+    <style>
+    .table {
+        border-spacing:0 20px;
+        border-collapse: separate;
+        padding: 0 200px;
+    }
+    .table th {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        color: mediumpurple;
+        font-size: 20px;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: rebeccapurple;
+
+    }
+
+    .table td:last-of-type{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .table-container {
+        padding: 0 200px;
+        margin-top: 20px;
+        margin-bottom: 1px; /* Add margin bottom to space out from the "Latest Posts" text */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+</style>
+    <div class="table-container">
+    <h1 style="color:#36242c; margin: 0 auto">Latest Posts</h1>
+    <a href="/feed" onclick="window.location.href = '/feed';"><img class="mb-4" src="static/refresh.png" alt="refresh" style="width:50px;"></a>
+
+    </div>
+    <table class="table table-primary table-hover">
+    <thead>
+{#    <tr>#}
+{#        <th scope="col"></th>#}
+{#        <th></th>#}
+{#        <th scope="col"></th>#}
+{#        <th scope="col"></th>#}
+{#        <th scope="col"></th>#}
+{#        <th scope="col"> </th>#}
+{#        <th scope="col"> </th>#}
+{#        <th scope="col"> </th>#}
+{#    </tr>#}
+  </thead>
+  <tbody>
+
+        {% for item in items|reverse%}
+        <tr>
+            <th scope="row">{{item[1]}}</th>
+            <td> is feeling </td>
+            <td><b>{{item[2]}}</b></td>
+            <td>Today's song: </td>
+            <td><b>{{item[3] | safe}}</b></td>
+            <td>My mood has the color </td>
+            <td><b>{{item[4]}}</b></td>
+            <td>
+                <a href="/feed_item/{{ item[0] }}">
+                <button type="button" style="background-color: mediumpurple; color: white" class="btn btn-light">See their posts</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+  </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+♥ Feed ♥
+{% endblock %}
+
+{% block content %}
+    <div style="padding: 0 60px; margin-top: 20px;">
+    <table class="table table-primary table-hover">
+    <thead>
+    <tr>
+        <th scope="col">User</th>
+        <th scope="col">Feeling</th>
+        <th scope="col">Today's Song</th>
+        <th scope="col">Mood Color</th>
+        <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+
+        {% for item in items%}
+        <tr>
+            <th scope="row">{{item[0]}}</th>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>
+                <a href="/ticket_item/{{ item[0] }}"
+                <button type="button" class="btn btn-light">See their posts</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+  </tbody>
+    </table>
+    </div>
+{% endblock %}

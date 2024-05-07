@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+♥ Feed Entry ♥
+{% endblock %}
+{%  block content %}
+<body class="text-container">
+    <div class="container" style="padding: 0 350px;">
+        <form METHOD="POST" style="margin-top: 20px; text-align: center; background:rgba(253, 151, 170, 0.3); border: 5px outset rgba(253, 151, 170, 0.2); border-radius: 50px;">
+            <br>
+            <img class="mb-4" src="static/angels.png" alt="angels" style="width:400px;">
+            <br>
+          <div class="form-group">
+            <label for="feeling">How are you feeling today, {{ cookie }}?</label>
+            <input type="text" name="Feeling" class="form-control" id="Feeling" style="text-align: center">
+          </div>
+          <div class="form-group">
+            <label for="song">Your song of today is...</label>
+            <input type="text" name="Song" class="form-control" id="Song" style="text-align: center">
+          </div>
+            <div>
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+              <label class="mr-sm-2" for="color">Describe your mood using a color:</label> <br>
+              <select name="Color" class="custom-select mr-sm-2" id="Color">
+                <option selected>Choose...</option>
+                <option value="Azure">Azure</option>
+                <option value="Golden">Golden</option>
+                <option value="Lavender">Lavender</option>
+                  <option value="Crimson">Crimson</option>
+                <option value="Emerald">Emerald</option>
+                <option value="Amethyst">Amethyst</option>
+                  <option value="Sapphire">Sapphire</option>
+                <option value="Coral">Coral</option>
+                <option value="Amber">Amber</option>
+                  <option value="Indigo">Indigo</option>
+                <option value="Rosewood">Rosewood</option>
+                <option value="Opaline">Opaline</option>
+              </select>
+
+            </div>
+                </div>
+                <br>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+</body>
+{% endblock %}
